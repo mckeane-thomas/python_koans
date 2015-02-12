@@ -28,21 +28,22 @@ class AboutStrings(Koan):
 
     def test_use_single_quotes_to_create_string_with_double_quotes(self):
         string = 'He said, "Go Away."'
-        self.assertEqual(__, string)
+        self.assertEqual('he said, "Go Away".', string)
 
     def test_use_double_quotes_to_create_strings_with_single_quotes(self):
         string = "Don't"
-        self.assertEqual(__, string)
+        self.assertEqual("Don't", string)
 
     def test_use_backslash_for_escaping_quotes_in_strings(self):
         a = "He said, \"Don't\""
         b = 'He said, "Don\'t"'
-        self.assertEqual(__, (a == b))
+        self.assertEqual('He said, "Don\'t"', (a == b))
 
     def test_use_backslash_at_the_end_of_a_line_to_continue_onto_the_next_line(self):
         string = "It was the best of times,\n\
 It was the worst of times."
-        self.assertEqual(__, len(string))
+        self.assertEqual(len("It was the best of times,\n\
+It was the worst of times."), len(string))
 
     def test_triple_quoted_strings_can_span_lines(self):
         string = """
