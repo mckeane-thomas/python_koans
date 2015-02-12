@@ -50,31 +50,34 @@ It was the worst of times."), len(string))
 Howdy,
 world!
 """
-        self.assertEqual(__, len(string))
+        self.assertEqual(len("""
+Howdy,
+world!
+"""), len(string))
 
     def test_triple_quoted_strings_need_less_escaping(self):
         a = "Hello \"world\"."
         b = """Hello "world"."""
-        self.assertEqual(__, (a == b))
+        self.assertEqual("""Hello "world".""", (a == b))
 
     def test_escaping_quotes_at_the_end_of_triple_quoted_string(self):
         string = """Hello "world\""""
-        self.assertEqual(__, string)
+        self.assertEqual("""Hello "world\"""", string)
 
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
-        self.assertEqual(__, string)
+        self.assertEqual("Hello, " + "world", string)
 
     def test_adjacent_strings_are_concatenated_automatically(self):
         string = "Hello" ", " "world"
-        self.assertEqual(__, string)
+        self.assertEqual("Hello" ", " "world", string)
 
     def test_plus_will_not_modify_original_strings(self):
         hi = "Hello, "
         there = "world"
         string = hi + there
-        self.assertEqual(__, hi)
-        self.assertEqual(__, there)
+        self.assertEqual("Hello, ", hi)
+        self.assertEqual("world", there)
 
     def test_plus_equals_will_append_to_end_of_string(self):
         hi = "Hello, "
